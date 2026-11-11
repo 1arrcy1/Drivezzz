@@ -1,0 +1,24 @@
+# Xcode
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+
+# Server
+node_modules/
+*.db
+*.db-shm
+*.db-wal
+
+# Keys and secrets never go in git
+*.p8
+*.pem
+*.key
+.env*
+*wallets*.json
+keys.txt
+
+.DS_Store
+
+# Measurements from Instruments
+*.trace/

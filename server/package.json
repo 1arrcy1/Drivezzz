@@ -1,0 +1,12 @@
+{
+  "name": "drivezzz-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Backend for the Drivezzz app: API, escrow, website and admin panel. No dependencies.",
+  "type": "module",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/index.js",
+    "test": "node --disable-warning=ExperimentalWarning --test --test-concurrency=1 \"test/*.test.js\""
+  }
+}

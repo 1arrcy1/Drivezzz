@@ -1,0 +1,27 @@
+[Unit]
+Description=Drivezzz test server: another pretend driver, %i
+After=drivezzz-test.service
+Wants=drivezzz-test.service
+
+[Service]
+Type=simple
+User=drivezzz-test
+Group=drivezzz-test
+WorkingDirectory=/opt/drivezzz-test/contract
+# Its wallet is a key file it makes itself in ~/devnet: never funded, nothing on any chain.
+Environment=HOME=/var/lib/drivezzz-test/driver
+# Its name, price and spot: setup-test-server.sh writes this file.
+EnvironmentFile=/etc/default/drivezzz-test-driver-%i
+ExecStart=/opt/drivezzz/node/bin/node --disable-warning=ExperimentalWarning test/test-driver.mjs http://127.0.0.1:8090 ${TEST_DRIVER_LAT} ${TEST_DRIVER_LNG} %i ${TEST_DRIVER_PER_KM}
+Restart=always
+RestartSec=5
+
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/drivezzz-test/driver
+InaccessiblePaths=-/var/lib/drivezzz
+
+[Install]
+WantedBy=multi-user.target

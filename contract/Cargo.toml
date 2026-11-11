@@ -1,0 +1,28 @@
+[package]
+name = "drivezzz_escrow"
+version = "0.1.0"
+edition = "2021"
+description = "Drivezzz ride escrow: pay out, 50/50 or refund, nothing else."
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+# 10-minute timeout instead of 30 days, to test it on devnet.
+devnet = []
+
+[dependencies]
+pinocchio = { version = "=0.12.0", default-features = false, features = ["cpi", "copy"] }
+pinocchio-system = "=0.7.0"
+pinocchio-token = "=0.8.0"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }
+
+[profile.release]
+opt-level = "s"
+lto = "fat"
+codegen-units = 1
+overflow-checks = true
+panic = "abort"

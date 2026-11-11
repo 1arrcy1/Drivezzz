@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Drivezzz: rides at the price drivers set themselves</title>
+<meta name="description" content="An open market for rides. See every driver's own price on the map, or name yours. Pay from your own wallet into escrow. Now on the App Store for iPhone. Android is following soon.">
+<meta name="theme-color" content="#F4F5F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0D12" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Drivezzz: rides at the price drivers set themselves">
+<meta property="og:description" content="See every driver's own price on the map, or name yours. Your payment waits in escrow until the ride is done. Now on the App Store.">
+<meta property="og:image" content="https://drivezzz.s3rver.nl/logo.png">
+<meta property="og:url" content="https://drivezzz.s3rver.nl/">
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/logo.png">
+<link rel="stylesheet" href="/style.css?v=1">
+<script>document.documentElement.classList.add('js');try{var a=localStorage.getItem('accent');if(a==='red'||a==='yellow')document.documentElement.dataset.accent=a}catch(e){}</script>
+<script src="/site.js?v=1" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="car" viewBox="0 0 24 24"><path d="M4 16v-4l2.2-5.2A2 2 0 0 1 8 5.6h8a2 2 0 0 1 1.8 1.2L20 12v4M4 12h16M4 16h16M6 16v2.4M18 16v2.4M7.5 14h.01M16.5 14h.01"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9.5" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="plate" viewBox="0 0 24 24"><rect x="2.5" y="7.5" width="19" height="9" rx="2"/><path d="M6.5 12h4M13.5 12h4"/></symbol>
+  <symbol id="route" viewBox="0 0 24 24"><circle cx="6" cy="18.5" r="2.2"/><circle cx="18" cy="5.5" r="2.2"/><path d="M8.2 18.5H15a3.3 3.3 0 0 0 0-6.5H9a3.3 3.3 0 0 1 0-6.5h6.8"/></symbol>
+  <symbol id="chat" viewBox="0 0 24 24"><path d="M4 5.5h16v11H9.5L4 20.5z"/></symbol>
+  <symbol id="flag" viewBox="0 0 24 24"><path d="M6 21V4h12l-2.5 4L18 12H6"/></symbol>
+  <symbol id="person" viewBox="0 0 24 24"><circle cx="12" cy="6.5" r="2.8"/><path d="M12 10v5M12 15l-3 6M12 15l3 6M7 12.5l5-2 5 2"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="block" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.7-3.2 7.8-7.5 9.5-4.3-1.7-7.5-4.8-7.5-9.5V6z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="15" rx="3"/><path d="M4 10.5h16M9 3.5v4M15 3.5v4"/></symbol>
+  <symbol id="tag" viewBox="0 0 24 24"><path d="M4 4h8.5l7.5 7.5-8.5 8.5L4 12.5z"/><circle cx="8.5" cy="8.5" r="1.2"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+  <symbol id="apple" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.9-.8-3.1-.8C6 7.5 3.6 9.6 3.6 13.4c0 1.2.2 2.4.7 3.7.6 1.6 2.6 5.6 4.7 5.6 1.1 0 1.9-.8 3.3-.8s2.1.8 3.3.8c2.2 0 4-3.6 4.5-5.3-2.9-1.3-3.7-3.9-3.7-4.7zM14.1 5.3c.6-.8 1.1-1.9.9-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.2-.6 2.9-1.4z"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M4.6 2.6c-.4.2-.6.7-.6 1.2v16.4c0 .5.2 1 .6 1.2l9.5-9.4-9.5-9.4zM15.4 10.7L6.3 2.3l11.4 6.5-2.3 1.9zM15.4 13.3l2.3 1.9L6.3 21.7l9.1-8.4zM18.9 9.6l-2.4 1.4 2.5 2.5c.1-.1 2.2-1 2.2-1.9 0-1-2.3-2-2.3-2z"/></symbol>
+</svg>
+
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/" aria-label="Drivezzz home"><svg class="mark" viewBox="0 0 1000 1000" aria-hidden="true"><rect width="1000" height="1000"/><path class="r" d="M270 290H730L270 710H730" fill="none" stroke-width="150" stroke-linejoin="round" stroke-linecap="round"/><path class="d" d="M270 290H730L270 710H730" fill="none" stroke-width="16" stroke-dasharray="46 52" stroke-linecap="round"/></svg>Drivezzz</a>
+  <nav class="links" aria-label="Main">
+    <a href="#market">The market</a><a href="#how">How it works</a><a href="#escrow">Escrow</a><a href="#drive">Drive</a><a href="#safety">Safety</a><a href="/support">Support</a>
+  </nav>
+  <a class="get" href="#get">Get the app</a>
+</div></header>
+
+<main>
+<section class="hero">
+  <svg class="bg" viewBox="0 0 1000 1000" aria-hidden="true"><path d="M270 290H730L270 710H730"/></svg>
+  <div class="wrap">
+    <div>
+      <span class="pill">Now on the App Store · Android following soon</span>
+      <h1 class="big">Rides at the price drivers set themselves.</h1>
+      <p class="lead">An open market for rides. See every driver's own price on the map, or name yours and let a driver claim it. You pay from your own wallet, and the money waits in escrow until the ride is done.</p>
+      <div class="cta">
+        <a class="badge" href="https://apps.apple.com/nl/app/drivezzz/id6829689681" rel="noopener"><svg class="i"><use href="#apple"/></svg><span><small>Download on the</small>App Store</span></a>
+        <a class="badge soon" href="#android" aria-label="Android: following soon. Join the beta"><svg class="i"><use href="#play"/></svg><span><small>Android</small>Following soon</span></a>
+        <a class="btn quiet" href="#how">See how it works</a>
+      </div>
+      <ul class="facts">
+        <li><svg class="i"><use href="#check"/></svg>The driver's way to you is in the quote</li>
+        <li><svg class="i"><use href="#check"/></svg>No deposits or balances</li>
+        <li><svg class="i"><use href="#check"/></svg>Reports looked at within 24 hours</li>
+      </ul>
+    </div>
+    <div class="stage" id="example">
+      <div class="phone" role="group" aria-label="Example of the app: three drivers with their own prices on a map">
+        <div class="screen">
+          <svg class="map" viewBox="0 0 360 450" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+            <rect class="m-land" width="360" height="450"/>
+            <path class="m-water" d="M0 0h360v52c-40 18-84 8-128 14s-60 28-112 20S40 76 0 86z"/>
+            <path class="m-park" d="M278 142l60-14 20 62-58 22zM18 296c28-20 68-12 80 12s-24 50-56 42-46-36-24-54z"/>
+            <g class="m-canal">
+              <path d="M2 136c70 74 276 74 358-10"/>
+              <path d="M-8 178c82 92 306 92 378-16"/>
+              <path d="M-12 224c92 106 336 106 388-26"/>
+              <path class="river" d="M226 450c-14-50 18-84 8-124s-34-58-24-104"/>
+            </g>
+            <g class="m-road2">
+              <path d="M180 66L60 330M180 66l-52 300M180 66l28 340M180 66l110 300M180 66L340 280M0 140l360 150M0 290l360-90M40 60l-40 300M320 60l40 260"/>
+            </g>
+            <g class="m-road">
+              <path d="M0 256c110 66 280 56 360-20"/>
+              <path d="M180 66c-8 70-6 146 28 216s70 110 112 168"/>
+            </g>
+            <path class="route-edge" d="M150 148c14 42 32 92 58 134l22 20 62-16"/>
+            <path class="route" d="M150 148c14 42 32 92 58 134l22 20 62-16"/>
+          </svg>
+          <span class="marker" style="left:41.5%;top:21.2%"><svg class="i"><use href="#person"/></svg></span>
+          <span class="marker drop" style="left:81%;top:41%"><svg class="i"><use href="#flag"/></svg></span>
+          <button class="tag-pin on" style="left:27%;top:16%" data-driver="bram" data-price="€6.39" aria-pressed="true" aria-label="Bram, €6.39"><svg class="i"><use href="#car"/></svg>€6.39 <small>6 min</small></button>
+          <button class="tag-pin" style="left:70%;top:21%" data-driver="chris" data-price="€6.76" aria-pressed="false" aria-label="Chris, €6.76"><svg class="i"><use href="#car"/></svg>€6.76 <small>3 min</small></button>
+          <button class="tag-pin" style="left:31%;top:39%" data-driver="anna" data-price="€8.21" aria-pressed="false" aria-label="Anna, €8.21"><svg class="i"><use href="#car"/></svg>€8.21 <small>4 min</small></button>
+          <div class="sheet">
+            <div class="trip">
+              <div><i class="dot"></i>Central Station</div>
+              <div><svg class="i"><use href="#flag"/></svg>Museumplein <span>3.8 km · 8 min</span></div>
+            </div>
+            <div class="rows">
+              <button class="row on" data-driver="bram" data-price="€6.39" aria-pressed="true"><span class="tile"><svg class="i"><use href="#car"/></svg></span><span><b>Bram</b><small>★ 4.9 · 4 seats · cheapest</small></span><span class="price"><b>€6.39</b><small>in 6 min</small></span></button>
+              <button class="row" data-driver="chris" data-price="€6.76" aria-pressed="false"><span class="tile"><svg class="i"><use href="#car"/></svg></span><span><b>Chris</b><small>★ 4.8 · 4 seats</small></span><span class="price"><b>€6.76</b><small>in 3 min</small></span></button>
+              <button class="row" data-driver="anna" data-price="€8.21" aria-pressed="false"><span class="tile"><svg class="i"><use href="#car"/></svg></span><span><b>Anna</b><small>★ 5.0 · 6 seats</small></span><span class="price"><b>€8.21</b><small>in 4 min</small></span></button>
+            </div>
+            <div class="mock-actions"><span>Your price</span><span class="go" id="book">Book for €6.39</span></div>
+          </div>
+        </div>
+        <div class="float a" aria-hidden="true"><span class="ic"><svg class="i"><use href="#lock"/></svg></span><span><b>Locked in escrow</b>Until your ride is done</span></div>
+        <div class="float b" aria-hidden="true"><span class="ic"><svg class="i"><use href="#check"/></svg></span><span><b>100% on time</b>Shown on every driver</span></div>
+      </div>
+      <p class="note">An example: the names and prices are made up. Tap a driver to pick them.</p>
+      <div class="colours" role="group" aria-label="Your colour">Your colour, as in the app
+        <button style="--c:#1659E0" data-colour="blue" aria-label="Blue"></button>
+        <button style="--c:#D92D20" data-colour="red" aria-label="Red"></button>
+        <button style="--c:#F5C400" data-colour="yellow" aria-label="Yellow"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="block" id="market">
+    <p class="kicker">The market</p>
+    <h2 class="title">The map shows what every driver asks.</h2>
+    <p class="sub">Drivers set their own prices, per vehicle. So instead of one price from an app, you see them all and choose.</p>
+    <div class="bento">
+      <div class="card tall reveal">
+        <h3>Or name your own price</h3>
+        <p>Slide to what you want to pay. Drivers nearby see your order on their map and can claim it.</p>
+        <div class="ruler-value" id="ruler-value" aria-live="polite">€9.50</div>
+        <div class="ruler-wrap">
+          <div class="cheapest" id="cheapest" style="left:18.6%"><span>Cheapest driver €6.39</span></div>
+          <input class="ruler" id="ruler" type="range" min="100" max="3000" step="50" value="950" data-cheapest="639" aria-label="Your price">
+        </div>
+        <p class="ruler-text" id="ruler-text">Drivers nearby see your order on their map and can claim it at this price.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic-tile"><svg class="i"><use href="#tag"/></svg></div>
+        <h3>Every price up front</h3>
+        <p>Pick where you're going and each driver's price for the whole ride appears, with their way to you in it. Cheapest first.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic-tile"><svg class="i"><use href="#cal"/></svg></div>
+        <h3>Plan up to a week ahead</h3>
+        <p>Book a ride for later with the drivers who take planned rides, and pay at the latest 30 minutes before.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="how">
+    <p class="kicker">How it works</p>
+    <h2 class="title">From a tap to the drop-off.</h2>
+    <div class="road" id="road" aria-hidden="true"><div class="tar"><div class="fill"></div><div class="dash"></div></div><div class="car"><svg class="i"><use href="#car"/></svg></div></div>
+    <div class="steps">
+      <button class="step on"><small>1</small><b>A driver accepts</b>Ordering is free. A driver has 5 minutes to say yes, and you can still cancel.</button>
+      <button class="step"><small>2</small><b>You pay</b>5 minutes to pay from your own wallet, in USDC or SOL, while your driver can already set off. Or pay cash in the car.</button>
+      <button class="step"><small>3</small><b>The pickup</b>Follow your driver on the map, check the number plate, get in and check in.</button>
+      <button class="step"><small>4</small><b>The ride</b>Both phones follow the route. At the drop-off your driver checks out, and you can leave a review.</button>
+    </div>
+  </section>
+
+  <section class="night" id="escrow">
+    <div class="lockring" aria-hidden="true">
+      <svg viewBox="0 0 120 120"><circle class="bg-ring" cx="60" cy="60" r="54"/><circle class="fg-ring" cx="60" cy="60" r="54" pathLength="100"/></svg>
+      <div class="lock"><svg class="i"><use href="#lock"/></svg></div>
+    </div>
+    <div>
+      <p class="kicker">Escrow</p>
+      <h2 class="title">Your money waits, on the blockchain.</h2>
+      <div class="promises">
+        <div><b>From your wallet, not ours.</b><span>Drivezzz has no deposits, balances or withdrawals, and never sees your wallet's keys.</span></div>
+        <div><b>One ride, one escrow.</b><span>Each payment waits in its own escrow, a program on Solana, until the ride is done. Then it goes to your driver, or back to you if you're owed a refund.</span></div>
+        <div><b>It comes back by itself.</b><span>If nothing is decided within 30 days, the whole payment can be sent back to the wallet that paid. Anyone can start that, even if Drivezzz no longer exists.</span></div>
+        <div><b>€0.10 goes to Drivezzz.</b><span>That's the platform's fee on a ride paid in crypto. It comes out of the driver's payout, in the ride's coin, when a ride is paid out in full. Cash rides, refunds and a 50/50 have no fee.</span></div>
+        <div><b>Check the code yourself.</b><span>The apps, the server and the escrow program are public on <a href="https://github.com/1arrcy1/Drivezzz">GitHub</a>. See what they do, or build your own on them.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="plans">
+    <p class="kicker">If plans change</p>
+    <h2 class="title">You know what you get back.</h2>
+    <div class="card plans reveal">
+      <table>
+        <tr><th scope="row">You cancel before you've paid</th><td>Free. No money has moved.</td></tr>
+        <tr><th scope="row">Your driver is late</th><td class="full">Everything back, until you've checked in</td></tr>
+        <tr><th scope="row">Your driver cancels</th><td class="full">Everything back, also once you're in the car, unless they waited 10 minutes at the pickup for you</td></tr>
+        <tr><th scope="row">You cancel after paying, with your driver on time</th><td>50% back, 50% to your driver</td></tr>
+      </table>
+    </div>
+    <p class="fine">Planned rides and the rest are in the <a href="/terms#cancelling">terms</a>. Crypto can lose value, and a payment on a blockchain can't be reversed.</p>
+  </section>
+
+  <section class="block" id="drive">
+    <p class="kicker">Drive</p>
+    <h2 class="title">Your car, your hours, your price.</h2>
+    <div class="split">
+      <div>
+        <ul class="ticks">
+          <li><svg class="i"><use href="#check"/></svg><span>Set your own price per km, per minute and for the way to your rider, for each vehicle.</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Drive a car, a motor or a scooter.</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>See the route, the distance and the price before you accept.</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Plan drives ahead if you want to, and go online only when it suits you.</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Get paid to your own wallet 24 hours after a ride.</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Pay Drivezzz €0.10 per ride paid in crypto, out of your payout, and nothing on cash rides.</span></li>
+        </ul>
+        <div class="drive-note">
+          <b>You drive for yourself</b>
+          <p>Drivezzz is at its core a marketplace and doesn't take responsibility for your insurance or licences. We do check what we can against the sources that exist: verify to get a blue check, which a car in the Netherlands needs before it can go online. Having what the law asks stays up to you.</p>
+        </div>
+      </div>
+      <div class="card reveal" aria-label="Example of a driver's earnings">
+        <div class="earn"><small>Total earnings</small><b>€1,284.50</b><small>6 rides today</small></div>
+        <div class="scores"><div><b>98%</b>On time</div><div><b>100%</b>Completed</div><div><b>94%</b>Accepted</div></div>
+        <div class="slide"><i><svg class="i"><use href="#car"/></svg></i><span>Go online</span></div>
+        <p class="note" style="margin-top:12px">An example: these numbers are made up.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="safety">
+    <p class="kicker">Safety</p>
+    <h2 class="title">Built for two strangers in one car.</h2>
+    <div class="grid3">
+      <div class="card reveal"><div class="ic-tile"><svg class="i"><use href="#plate"/></svg></div><h3>Check the plate</h3><p>See the car, its photos and its number plate. You check in only once you're inside.</p></div>
+      <div class="card reveal"><div class="ic-tile"><svg class="i"><use href="#route"/></svg></div><h3>Both phones follow the route</h3><p>If your phone and the car drift apart, the app asks if everything is OK.</p></div>
+      <div class="card reveal"><div class="ic-tile"><svg class="i"><use href="#chat"/></svg></div><h3>Private messages</h3><p>Messages are end-to-end encrypted. We can only read a chat if you report it.</p></div>
+      <div class="card reveal"><div class="ic-tile"><svg class="i"><use href="#block"/></svg></div><h3>Report or block anyone</h3><p>From their page, a ride or a chat. We look at reports within 24 hours. Always report a drop-off a car can't reach: it can get someone banned permanently, straight away.</p></div>
+      <div class="card reveal"><div class="ic-tile"><svg class="i"><use href="#shield"/></svg></div><h3>Three strikes and out</h3><p>A strike is a week's ban, three is for good. A new account or a reinstall doesn't get around it.</p></div>
+      <div class="card reveal"><div class="ic-tile"><svg class="i"><use href="#clock"/></svg></div><h3>On-time and completed scores</h3><p>Every driver's page shows how often they're on time and finish a ride, with real reviews from their riders.</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="get">
+    <p class="kicker">Get the app</p>
+    <h2 class="title">Out now on the App Store.</h2>
+    <p class="sub">Drivezzz is live for iPhone. Android is following soon: you can already sign up as a tester.</p>
+    <div class="stores">
+      <div class="card store reveal">
+        <div class="store-head">
+          <img class="store-icon" src="/logo.png" width="72" height="72" alt="">
+          <div><h3>Drivezzz</h3><p>Travel · Free · 18+</p></div>
+          <a class="badge" href="https://apps.apple.com/nl/app/drivezzz/id6829689681" rel="noopener"><svg class="i"><use href="#apple"/></svg><span><small>Download on the</small>App Store</span></a>
+        </div>
+        <dl class="specs">
+          <div><dt>Works on</dt><dd>iPhone with iOS 17 or later</dd></div>
+          <div><dt>Price</dt><dd>Free, no in-app purchases</dd></div>
+          <div><dt>Age</dt><dd>18+</dd></div>
+          <div><dt>Size</dt><dd>31.3 MB</dd></div>
+          <div><dt>Language</dt><dd>English, Dutch coming soon</dd></div>
+          <div><dt>Privacy label</dt><dd>No data collected</dd></div>
+          <div><dt>Where</dt><dd>Starts in the Netherlands</dd></div>
+          <div><dt>Payment</dt><dd>USDC or SOL from your own wallet, or cash</dd></div>
+        </dl>
+        <ul class="ticks store-ticks">
+          <li><svg class="i"><use href="#check"/></svg><span>See every driver's price up front, or name your own</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Plan a ride up to a week ahead</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Escrow on Solana, end-to-end encrypted chat</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Drive a car, motor or scooter at your own price</span></li>
+        </ul>
+        <p class="note">Open <a href="https://apps.apple.com/nl/app/drivezzz/id6829689681" rel="noopener">the listing on the App Store</a> for screenshots and the full description.</p>
+      </div>
+      <div class="card store android reveal" id="android">
+        <div class="store-head">
+          <div class="ic-tile"><svg class="i"><use href="#play"/></svg></div>
+          <div><h3>Android: following soon</h3><p>Google Play · in testing</p></div>
+        </div>
+        <p>The Android app is in its last round of testing before it goes on Google Play. Want it before everyone else? Sign up as a tester in three steps, in this order:</p>
+        <ol class="signup">
+          <li><b>Join the test group</b><a href="https://groups.google.com/g/drivezzz-testers" rel="noopener">groups.google.com/g/drivezzz-testers</a><span>Google Play only lets in members of this group.</span></li>
+          <li><b>Become a tester</b><a href="https://play.google.com/apps/testing/eu.drivezzz.app" rel="noopener">play.google.com/apps/testing/eu.drivezzz.app</a><span>With the same Google account you use on your phone.</span></li>
+          <li><b>Install the app</b><a href="https://play.google.com/store/apps/details?id=eu.drivezzz.app" rel="noopener">play.google.com/store/apps/details?id=eu.drivezzz.app</a><span>This page only opens once you're in as a tester. It can take a few minutes.</span></li>
+        </ol>
+        <p class="note">Testing is for people of 18 and over. Things may still change before the release. Found something? <a href="/support#contact">Tell us</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="endcap">
+    <h2>Drivezzz is on the App Store.</h2>
+    <p>For iPhone, for people of 18 and over. Android is following soon, and you can already <a href="#android">join the beta</a>. Questions? We're happy to help.</p>
+    <div class="cta">
+      <a class="badge" href="https://apps.apple.com/nl/app/drivezzz/id6829689681" rel="noopener"><svg class="i"><use href="#apple"/></svg><span><small>Download on the</small>App Store</span></a>
+      <a class="btn" href="/support">Go to support</a>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div class="cols">
+    <div><a class="brand" href="/"><svg class="mark" viewBox="0 0 1000 1000" aria-hidden="true"><rect width="1000" height="1000"/><path class="r" d="M270 290H730L270 710H730" fill="none" stroke-width="150" stroke-linejoin="round" stroke-linecap="round"/></svg>Drivezzz</a><p class="tag">An open market for rides. No ads, and no trackers in the app or on this website.</p></div>
+    <div><h3>Drivezzz</h3><ul><li><a href="#market">The market</a></li><li><a href="#how">How it works</a></li><li><a href="#escrow">Escrow</a></li><li><a href="#drive">Drive</a></li><li><a href="#safety">Safety</a></li><li><a href="#get">Get the app</a></li><li><a href="https://github.com/1arrcy1/Drivezzz">Source code</a></li></ul></div>
+    <div><h3>Help</h3><ul><li><a href="/support">Support</a></li><li><a href="/support#report">Report a problem</a></li><li><a href="/support#delete">Delete your account</a></li></ul></div>
+    <div><h3>Legal</h3><ul><li><a href="/terms">Terms</a></li><li><a href="/eula">EULA</a></li><li><a href="/privacy">Privacy</a></li><li><a href="/terms#who">Who we are</a></li></ul></div>
+  </div>
+  <p class="small">© 2026 Drivezzz. Apple and App Store are trademarks of Apple Inc. Android and Google Play are trademarks of Google LLC.</p>
+</div></footer>
+</body>
+</html>

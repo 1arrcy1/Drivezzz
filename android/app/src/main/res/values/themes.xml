@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The launch colour is the app's blue; the loading screen then takes over in the rider's own colour. -->
+    <style name="Theme.Drivezzz" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/launch</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+    <color name="launch">#1659E0</color>
+    <color name="icon_background">#1659E0</color>
+</resources>

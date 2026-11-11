@@ -1,0 +1,33 @@
+[Unit]
+Description=Drivezzz test server: a pretend chain, no contract and no real money
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=drivezzz-test
+Group=drivezzz-test
+WorkingDirectory=/opt/drivezzz-test/server
+Environment=DEV=1
+Environment=ESCROW_FAKE=1
+Environment=HOST=0.0.0.0
+Environment=PORT=8090
+Environment=DATA_DIR=/var/lib/drivezzz-test
+Environment=BASE_URL=http://your-server:8090
+# As the live server would run with many people: helper processes, and riders close together sharing an answer.
+Environment=WORKERS=2
+Environment=SHARED_LOOK_MS=15000
+ExecStart=/opt/drivezzz/node/bin/node --disable-warning=ExperimentalWarning src/index.js
+Restart=always
+RestartSec=3
+
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/drivezzz-test
+# It never gets near the live server's data; ProtectHome keeps it from the keys in /root.
+InaccessiblePaths=-/var/lib/drivezzz
+
+[Install]
+WantedBy=multi-user.target

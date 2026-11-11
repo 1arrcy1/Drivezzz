@@ -1,0 +1,33 @@
+[Unit]
+Description=Drivezzz API, website and admin panel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=drivezzz
+Group=drivezzz
+WorkingDirectory=/opt/drivezzz/server
+Environment=NODE_ENV=production
+Environment=HOST=0.0.0.0
+Environment=PORT=8080
+Environment=DATA_DIR=/var/lib/drivezzz
+Environment=BASE_URL=https://drivezzz.s3rver.nl
+# The keys stay in /root in plain text; systemd passes the service a read-only copy.
+# The escrow's server key. It has to exist before this file is installed: without it the service won't start.
+LoadCredential=escrow:/root/drivezzz-escrow-key.json
+# The contract's settings admin, for connecting another fee address on the panel. It can't update the program.
+LoadCredential=escrow-admin:/root/drivezzz-deploy-key.json
+EnvironmentFile=-/etc/default/drivezzz
+ExecStart=/opt/drivezzz/node/bin/node --disable-warning=ExperimentalWarning src/index.js
+Restart=always
+RestartSec=3
+
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/drivezzz
+
+[Install]
+WantedBy=multi-user.target

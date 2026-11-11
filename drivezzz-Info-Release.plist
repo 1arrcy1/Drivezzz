@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>eu.drivezzz.app</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>drivezzz</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>waze</string>
+		<string>comgooglemaps</string>
+		<string>solana</string>
+		<string>phantom</string>
+		<string>solflare</string>
+	</array>
+	<key>NFCReaderUsageDescription</key>
+	<string>Drivers in the Netherlands: to read the chip in your passport or ID card, which shows it’s genuine and who you are.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Drivers in the Netherlands: to read your ID’s code, to take a selfie that’s compared with your ID’s photo on this phone, and to photograph your chauffeurskaart and taxi permit.</string>
+	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+	<array>
+		<string>A0000002471001</string>
+		<string>A0000002472001</string>
+		<string>00000000000000</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchBackground</string>
+	</dict>
+</dict>
+</plist>

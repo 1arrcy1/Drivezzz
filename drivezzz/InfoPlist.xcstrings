@@ -1,0 +1,114 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Drivezzz"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drivezzz"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "drivezzz"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "drivezzz"
+          }
+        }
+      }
+    },
+    "NFCReaderUsageDescription" : {
+      "comment" : "Privacy - NFC Scan Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Drivers in the Netherlands: to read the chip in your passport or ID card, which shows it’s genuine and who you are."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chauffeurs in Nederland: om de chip in je paspoort of ID-kaart te lezen, die laat zien dat hij echt is en wie je bent."
+          }
+        }
+      }
+    },
+    "NSCameraUsageDescription" : {
+      "comment" : "Privacy - Camera Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Drivers in the Netherlands: to read your ID’s code, to take a selfie that’s compared with your ID’s photo on this phone, and to photograph your chauffeurskaart and taxi permit."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chauffeurs in Nederland: om de code van je ID te lezen, een selfie te maken die op deze telefoon met de foto van je ID wordt vergeleken, en je chauffeurskaart en taxivergunning te fotograferen."
+          }
+        }
+      }
+    },
+    "NSLocationAlwaysAndWhenInUseUsageDescription" : {
+      "comment" : "Privacy - Location Always and When In Use Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Drivezzz needs your location to find drivers and riders near you, to check you in and out of a ride, and to follow a ride. While you drive it keeps sharing your position when the app is in the background: a blue bar shows when."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drivezzz heeft je locatie nodig om chauffeurs en passagiers bij jou in de buurt te vinden, om je in en uit te checken bij een rit, en om een rit te volgen. Terwijl je rijdt deelt de app je positie ook als hij op de achtergrond staat: een blauwe balk laat zien wanneer."
+          }
+        }
+      }
+    },
+    "NSLocationWhenInUseUsageDescription" : {
+      "comment" : "Privacy - Location When In Use Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Drivezzz needs your location to find drivers and riders near you, to check you in and out of a ride, and to follow a ride. While you drive it keeps sharing your position when the app is in the background: a blue bar shows when."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drivezzz heeft je locatie nodig om chauffeurs en passagiers bij jou in de buurt te vinden, om je in en uit te checken bij een rit, en om een rit te volgen. Terwijl je rijdt deelt de app je positie ook als hij op de achtergrond staat: een blauwe balk laat zien wanneer."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

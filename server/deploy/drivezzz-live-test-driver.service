@@ -1,0 +1,30 @@
+# A pretend driver on the live server, to book while the chain there is pretend. It takes every order within 15 km, from anyone.
+# It doesn't start once the live server is on the real network, and has to go before the contract is deployed
+# (docs/mainnet-checklist.md). Not installed by any script: copy it to /etc/systemd/system and enable it by hand.
+[Unit]
+Description=Drivezzz live server: a pretend driver to book, near Den Haag Centraal
+After=drivezzz.service network-online.target
+PartOf=drivezzz.service
+
+[Service]
+Type=simple
+User=drivezzz-test
+Group=drivezzz-test
+WorkingDirectory=/opt/drivezzz-test/contract
+# Its wallet is a key file it makes itself in ~/devnet: never funded, nothing on any chain.
+Environment=HOME=/var/lib/drivezzz-test/live-driver
+Environment=TEST_DRIVER_ON_LIVE=1
+Environment=TEST_DRIVER_RADIUS_KM=15
+ExecStart=/opt/drivezzz/node/bin/node --disable-warning=ExperimentalWarning test/test-driver.mjs http://127.0.0.1:8080 52.0790 4.3130 live
+Restart=on-failure
+RestartSec=30
+
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/drivezzz-test/live-driver
+InaccessiblePaths=-/var/lib/drivezzz
+
+[Install]
+WantedBy=multi-user.target

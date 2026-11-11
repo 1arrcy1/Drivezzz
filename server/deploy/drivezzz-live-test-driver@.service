@@ -1,0 +1,35 @@
+# Three more pretend drivers on the live server, a, b and c, as on the test server (Pieter's request, 5 November 2026): around
+# Den Haag Centraal, at €0.60, €1.20 and €1.80 per km. Each takes every order within 15 km, from anyone.
+# Like drivezzz-live-test-driver.service they don't start once the live server is on the real network, and have to go before the
+# contract is deployed (docs/mainnet-checklist.md). Not installed by any script: copy this to /etc/systemd/system, write
+# /etc/default/drivezzz-live-test-driver-a (and b, c) with TEST_DRIVER_NAME, TEST_DRIVER_PER_KM, TEST_DRIVER_LAT and TEST_DRIVER_LNG,
+# and enable drivezzz-live-test-driver@a (and b, c) by hand.
+[Unit]
+Description=Drivezzz live server: another pretend driver to book, %i
+After=drivezzz.service network-online.target
+PartOf=drivezzz.service
+
+[Service]
+Type=simple
+User=drivezzz-test
+Group=drivezzz-test
+WorkingDirectory=/opt/drivezzz-test/contract
+# Its wallet is a key file it makes itself in ~/devnet (live-a.json and so on): never funded, nothing on any chain.
+Environment=HOME=/var/lib/drivezzz-test/live-driver
+Environment=TEST_DRIVER_ON_LIVE=1
+Environment=TEST_DRIVER_RADIUS_KM=15
+EnvironmentFile=/etc/default/drivezzz-live-test-driver-%i
+ExecStart=/opt/drivezzz/node/bin/node --disable-warning=ExperimentalWarning test/test-driver.mjs http://127.0.0.1:8080 ${TEST_DRIVER_LAT} ${TEST_DRIVER_LNG} live-%i ${TEST_DRIVER_PER_KM}
+# Not always: on the real network it stops by itself, and should stay stopped.
+Restart=on-failure
+RestartSec=30
+
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/drivezzz-test/live-driver
+InaccessiblePaths=-/var/lib/drivezzz
+
+[Install]
+WantedBy=multi-user.target

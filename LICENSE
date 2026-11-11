@@ -1,0 +1,149 @@
+Drivezzz Source Licence, version 1.0 (11 November 2026)
+
+Copyright (c) 2026 s3rver. Everything this licence doesn't give you stays with s3rver.
+
+Drivezzz's code is public so that anyone can read it, check it, learn from it and
+build something of their own on it, with their own smart contract if they like.
+What you may not do is copy it: put Drivezzz out again, as it is, or with only its
+name, look or settings changed.
+
+So this is a source-available licence, not an open-source licence as the Open
+Source Initiative defines it: building on the code is allowed, copying it is not.
+
+
+1. Words used here
+
+"The Software" is everything in this repository that s3rver made: the iPhone and
+Android apps, the server, the admin panel, the website, the escrow program in
+contract/, and the tests, scripts and documents. Parts made by others keep their
+own licence (section 8).
+
+"Your own work" is something you made with the Software, or with parts of it, that
+you changed in substance, so that it is a product of your own and not Drivezzz
+with another coat of paint: it adds, removes or reworks what it does or how it
+works.
+
+"A copy" is the Software, or anything made from it that isn't your own work:
+Drivezzz as it is, or with only its name, logo, colours, texts, translations,
+keys, addresses, servers, prices, fees or other settings changed, or with only
+small fixes.
+
+"Publish" is making something available to anyone outside your own organisation:
+in an app store, on a website, as a download, as a service people use, or by
+handing it over.
+
+"You" is the person or organisation using this licence.
+
+
+2. What you may do
+
+For free, worldwide, for as long as you keep to this licence, you may:
+
+a. Read, study, run and test the Software, and change it, for yourself or inside
+   your own organisation. That includes running your own server and apps to
+   develop and test with.
+
+b. Make your own work, and publish it, run it as a service and sell it, under
+   your own name.
+
+c. Have your own smart contract: deploy the escrow program in contract/, changed
+   or not, as a program of your own, with your own keys, program ID and fee
+   address, on any network, and use it in your own work. It is then yours to run
+   and to look after.
+
+d. Use parts of the Software, such as a file, a function, the escrow program or
+   the end-to-end encryption, in another product of your own.
+
+e. Keep a public fork of this repository on GitHub, or a similar site, with this
+   licence and notice in it, to work towards your own work or towards a change
+   you send back.
+
+
+3. What you may not do
+
+a. Publish a copy. That includes putting Drivezzz, or an app or server that is a
+   copy of it, in an app store, on a website or online as a service.
+
+b. Use the name Drivezzz, its logo or app icon, or anything else that makes people
+   think your work is Drivezzz, or comes from or is approved by s3rver. Give your
+   work its own name and look. You may say it is "based on Drivezzz" and link to
+   this repository.
+
+c. Remove or change the copyright notice or this licence in the parts you use.
+
+d. Use the Software, or your own work, with Drivezzz's own servers, services,
+   accounts, users or escrow, unless s3rver agreed to it in writing. This licence
+   is about the code, not the Drivezzz service: the Terms and the End User Licence
+   Agreement at https://drivezzz.s3rver.nl cover the service and its app.
+
+e. Use the Software against the law, or to deceive or harm people.
+
+
+4. When you publish your own work
+
+a. Say in it, where people can find it (its about page, website or README), that
+   it is based on Drivezzz, with a link to https://github.com/1arrcy1/Drivezzz.
+
+b. The parts that came from the Software stay under this licence, also inside
+   your work: whoever gets them from you gets them under this licence. Your own
+   changes and additions you may license as you like.
+
+c. You are responsible for your own work: for its users, for the money and the
+   escrow it handles, and for following the law where it runs. s3rver has no
+   part in it.
+
+
+5. Sending changes back
+
+If you send a change to this repository, as a pull request, a patch or code in an
+issue, you allow s3rver to use, change and publish it in Drivezzz under any
+licence, and everyone else to use it under this licence. You confirm that you
+have the right to give that.
+
+
+6. No guarantees
+
+The Software is given as it is, without any guarantee, as far as the law allows.
+It moves money on a blockchain. The escrow program has had no paid security
+audit, and a bug can lock or misroute money. If you run it, or anything made
+from it, you do so at your own risk.
+
+
+7. No liability
+
+As far as the law allows, s3rver isn't liable for any damage from using the
+Software, or from not being able to use it.
+
+
+8. Parts made by others
+
+Some parts come from others and have their own licence, which applies to those
+parts and which this licence doesn't limit:
+
+- NFCPassportReader (MIT): drivezzz/Features/Checks/NFCPassportReader-LICENSE.txt
+- The SFace face model (Apache 2.0): drivezzz/Features/Checks/SFace-LICENSE.txt
+- On Android, JMRTD and SCUBA (LGPL 2.1), Bouncy Castle (MIT), MapLibre
+  (BSD 2-Clause) and others: android/app/src/main/assets/licences/
+- The CSCA master list in server/src/csca/, published by Germany's BSI.
+
+The packages the apps, the server and the escrow program load (Swift packages,
+Gradle, npm and Cargo) come with their own licences too.
+
+
+9. Ending
+
+If you break this licence, it ends for you. If you stop and put it right within
+30 days after s3rver tells you, it comes back. That happens once: a second time,
+it ends for good.
+
+
+10. The law
+
+Dutch law applies to this licence. Disputes go to the competent court in the
+Netherlands.
+
+
+11. Anything else
+
+Want to do something this licence doesn't allow, such as publishing a copy, or
+connecting your own work to Drivezzz's servers? Ask: info@s3rver.nl.

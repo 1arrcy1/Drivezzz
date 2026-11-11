@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Drivezzz: ritten voor de prijs die chauffeurs zelf bepalen</title>
+<meta name="description" content="Een open markt voor ritten. Zie de eigen prijs van elke chauffeur op de kaart, of noem je eigen prijs. Betaal vanuit je eigen wallet in escrow. Nu in de App Store voor iPhone. Android volgt binnenkort.">
+<meta name="theme-color" content="#F4F5F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0D12" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Drivezzz: ritten voor de prijs die chauffeurs zelf bepalen">
+<meta property="og:description" content="Zie de eigen prijs van elke chauffeur op de kaart, of noem je eigen prijs. Je betaling wacht in escrow tot de rit klaar is. Nu in de App Store.">
+<meta property="og:image" content="https://drivezzz.s3rver.nl/logo.png">
+<meta property="og:url" content="https://drivezzz.s3rver.nl/">
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/logo.png">
+<link rel="stylesheet" href="/style.css?v=1">
+<script>document.documentElement.classList.add('js');try{var a=localStorage.getItem('accent');if(a==='red'||a==='yellow')document.documentElement.dataset.accent=a}catch(e){}</script>
+<script src="/site.js?v=1" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="car" viewBox="0 0 24 24"><path d="M4 16v-4l2.2-5.2A2 2 0 0 1 8 5.6h8a2 2 0 0 1 1.8 1.2L20 12v4M4 12h16M4 16h16M6 16v2.4M18 16v2.4M7.5 14h.01M16.5 14h.01"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9.5" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="plate" viewBox="0 0 24 24"><rect x="2.5" y="7.5" width="19" height="9" rx="2"/><path d="M6.5 12h4M13.5 12h4"/></symbol>
+  <symbol id="route" viewBox="0 0 24 24"><circle cx="6" cy="18.5" r="2.2"/><circle cx="18" cy="5.5" r="2.2"/><path d="M8.2 18.5H15a3.3 3.3 0 0 0 0-6.5H9a3.3 3.3 0 0 1 0-6.5h6.8"/></symbol>
+  <symbol id="chat" viewBox="0 0 24 24"><path d="M4 5.5h16v11H9.5L4 20.5z"/></symbol>
+  <symbol id="flag" viewBox="0 0 24 24"><path d="M6 21V4h12l-2.5 4L18 12H6"/></symbol>
+  <symbol id="person" viewBox="0 0 24 24"><circle cx="12" cy="6.5" r="2.8"/><path d="M12 10v5M12 15l-3 6M12 15l3 6M7 12.5l5-2 5 2"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="block" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.7-3.2 7.8-7.5 9.5-4.3-1.7-7.5-4.8-7.5-9.5V6z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="15" rx="3"/><path d="M4 10.5h16M9 3.5v4M15 3.5v4"/></symbol>
+  <symbol id="tag" viewBox="0 0 24 24"><path d="M4 4h8.5l7.5 7.5-8.5 8.5L4 12.5z"/><circle cx="8.5" cy="8.5" r="1.2"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+  <symbol id="apple" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.9-.8-3.1-.8C6 7.5 3.6 9.6 3.6 13.4c0 1.2.2 2.4.7 3.7.6 1.6 2.6 5.6 4.7 5.6 1.1 0 1.9-.8 3.3-.8s2.1.8 3.3.8c2.2 0 4-3.6 4.5-5.3-2.9-1.3-3.7-3.9-3.7-4.7zM14.1 5.3c.6-.8 1.1-1.9.9-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.2-.6 2.9-1.4z"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M4.6 2.6c-.4.2-.6.7-.6 1.2v16.4c0 .5.2 1 .6 1.2l9.5-9.4-9.5-9.4zM15.4 10.7L6.3 2.3l11.4 6.5-2.3 1.9zM15.4 13.3l2.3 1.9L6.3 21.7l9.1-8.4zM18.9 9.6l-2.4 1.4 2.5 2.5c.1-.1 2.2-1 2.2-1.9 0-1-2.3-2-2.3-2z"/></symbol>
+</svg>
+
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/" aria-label="Drivezzz, home"><svg class="mark" viewBox="0 0 1000 1000" aria-hidden="true"><rect width="1000" height="1000"/><path class="r" d="M270 290H730L270 710H730" fill="none" stroke-width="150" stroke-linejoin="round" stroke-linecap="round"/><path class="d" d="M270 290H730L270 710H730" fill="none" stroke-width="16" stroke-dasharray="46 52" stroke-linecap="round"/></svg>Drivezzz</a>
+  <nav class="links" aria-label="Menu">
+    <a href="#market">De markt</a><a href="#how">Zo werkt het</a><a href="#escrow">Escrow</a><a href="#drive">Rijden</a><a href="#safety">Veiligheid</a><a href="/support">Hulp</a>
+  </nav>
+  <a class="get" href="#get">Download de app</a>
+</div></header>
+
+<main>
+<section class="hero">
+  <svg class="bg" viewBox="0 0 1000 1000" aria-hidden="true"><path d="M270 290H730L270 710H730"/></svg>
+  <div class="wrap">
+    <div>
+      <span class="pill">Nu in de App Store · Android volgt binnenkort</span>
+      <h1 class="big">Ritten voor de prijs die chauffeurs zelf bepalen.</h1>
+      <p class="lead">Een open markt voor ritten. Zie de eigen prijs van elke chauffeur op de kaart, of noem je eigen prijs en laat een chauffeur hem aannemen. Je betaalt vanuit je eigen wallet, en het geld wacht in escrow tot de rit klaar is.</p>
+      <div class="cta">
+        <a class="badge" href="https://apps.apple.com/nl/app/drivezzz/id6829689681" rel="noopener"><svg class="i"><use href="#apple"/></svg><span><small>Download in de</small>App Store</span></a>
+        <a class="badge soon" href="#android" aria-label="Android: volgt binnenkort. Doe mee met de bèta"><svg class="i"><use href="#play"/></svg><span><small>Android</small>Volgt binnenkort</span></a>
+        <a class="btn quiet" href="#how">Zo werkt het</a>
+      </div>
+      <ul class="facts">
+        <li><svg class="i"><use href="#check"/></svg>De rit van de chauffeur naar jou zit in de prijs</li>
+        <li><svg class="i"><use href="#check"/></svg>Geen stortingen of tegoed</li>
+        <li><svg class="i"><use href="#check"/></svg>Meldingen binnen 24 uur bekeken</li>
+      </ul>
+    </div>
+    <div class="stage" id="example">
+      <div class="phone" role="group" aria-label="Voorbeeld van de app: drie chauffeurs met hun eigen prijs op een kaart">
+        <div class="screen">
+          <svg class="map" viewBox="0 0 360 450" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+            <rect class="m-land" width="360" height="450"/>
+            <path class="m-water" d="M0 0h360v52c-40 18-84 8-128 14s-60 28-112 20S40 76 0 86z"/>
+            <path class="m-park" d="M278 142l60-14 20 62-58 22zM18 296c28-20 68-12 80 12s-24 50-56 42-46-36-24-54z"/>
+            <g class="m-canal">
+              <path d="M2 136c70 74 276 74 358-10"/>
+              <path d="M-8 178c82 92 306 92 378-16"/>
+              <path d="M-12 224c92 106 336 106 388-26"/>
+              <path class="river" d="M226 450c-14-50 18-84 8-124s-34-58-24-104"/>
+            </g>
+            <g class="m-road2">
+              <path d="M180 66L60 330M180 66l-52 300M180 66l28 340M180 66l110 300M180 66L340 280M0 140l360 150M0 290l360-90M40 60l-40 300M320 60l40 260"/>
+            </g>
+            <g class="m-road">
+              <path d="M0 256c110 66 280 56 360-20"/>
+              <path d="M180 66c-8 70-6 146 28 216s70 110 112 168"/>
+            </g>
+            <path class="route-edge" d="M150 148c14 42 32 92 58 134l22 20 62-16"/>
+            <path class="route" d="M150 148c14 42 32 92 58 134l22 20 62-16"/>
+          </svg>
+          <span class="marker" style="left:41.5%;top:21.2%"><svg class="i"><use href="#person"/></svg></span>
+          <span class="marker drop" style="left:81%;top:41%"><svg class="i"><use href="#flag"/></svg></span>
+          <button class="tag-pin on" style="left:27%;top:16%" data-driver="bram" data-price="€6,39" aria-pressed="true" aria-label="Bram, €6,39"><svg class="i"><use href="#car"/></svg>€6,39 <small>6 min</small></button>
+          <button class="tag-pin" style="left:70%;top:21%" data-driver="chris" data-price="€6,76" aria-pressed="false" aria-label="Chris, €6,76"><svg class="i"><use href="#car"/></svg>€6,76 <small>3 min</small></button>
+          <button class="tag-pin" style="left:31%;top:39%" data-driver="anna" data-price="€8,21" aria-pressed="false" aria-label="Anna, €8,21"><svg class="i"><use href="#car"/></svg>€8,21 <small>4 min</small></button>
+          <div class="sheet">
+            <div class="trip">
+              <div><i class="dot"></i>Centraal Station</div>
+              <div><svg class="i"><use href="#flag"/></svg>Museumplein <span>3,8 km · 8 min</span></div>
+            </div>
+            <div class="rows">
+              <button class="row on" data-driver="bram" data-price="€6,39" aria-pressed="true"><span class="tile"><svg class="i"><use href="#car"/></svg></span><span><b>Bram</b><small>★ 4,9 · 4 plaatsen · goedkoopst</small></span><span class="price"><b>€6,39</b><small>over 6 min</small></span></button>
+              <button class="row" data-driver="chris" data-price="€6,76" aria-pressed="false"><span class="tile"><svg class="i"><use href="#car"/></svg></span><span><b>Chris</b><small>★ 4,8 · 4 plaatsen</small></span><span class="price"><b>€6,76</b><small>over 3 min</small></span></button>
+              <button class="row" data-driver="anna" data-price="€8,21" aria-pressed="false"><span class="tile"><svg class="i"><use href="#car"/></svg></span><span><b>Anna</b><small>★ 5,0 · 6 plaatsen</small></span><span class="price"><b>€8,21</b><small>over 4 min</small></span></button>
+            </div>
+            <div class="mock-actions"><span>Jouw prijs</span><span class="go" id="book">Boek voor €6,39</span></div>
+          </div>
+        </div>
+        <div class="float a" aria-hidden="true"><span class="ic"><svg class="i"><use href="#lock"/></svg></span><span><b>Vast in escrow</b>Tot je rit klaar is</span></div>
+        <div class="float b" aria-hidden="true"><span class="ic"><svg class="i"><use href="#check"/></svg></span><span><b>100% op tijd</b>Bij elke chauffeur te zien</span></div>
+      </div>
+      <p class="note">Een voorbeeld: de namen en prijzen zijn verzonnen. Tik op een chauffeur om hem te kiezen.</p>
+      <div class="colours" role="group" aria-label="Jouw kleur">Jouw kleur, net als in de app
+        <button style="--c:#1659E0" data-colour="blue" aria-label="Blauw"></button>
+        <button style="--c:#D92D20" data-colour="red" aria-label="Rood"></button>
+        <button style="--c:#F5C400" data-colour="yellow" aria-label="Geel"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="block" id="market">
+    <p class="kicker">De markt</p>
+    <h2 class="title">De kaart laat zien wat elke chauffeur vraagt.</h2>
+    <p class="sub">Chauffeurs bepalen hun eigen prijs, per voertuig. Dus in plaats van één prijs van een app zie je ze allemaal, en kies je zelf.</p>
+    <div class="bento">
+      <div class="card tall reveal">
+        <h3>Of noem je eigen prijs</h3>
+        <p>Schuif naar wat je wilt betalen. Chauffeurs in de buurt zien je rit op hun kaart en kunnen hem aannemen.</p>
+        <div class="ruler-value" id="ruler-value" aria-live="polite">€9,50</div>
+        <div class="ruler-wrap">
+          <div class="cheapest" id="cheapest" style="left:18.6%"><span>Goedkoopste chauffeur €6,39</span></div>
+          <input class="ruler" id="ruler" type="range" min="100" max="3000" step="50" value="950" data-cheapest="639" aria-label="Jouw prijs">
+        </div>
+        <p class="ruler-text" id="ruler-text">Chauffeurs in de buurt zien je rit op hun kaart en kunnen hem voor deze prijs aannemen.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic-tile"><svg class="i"><use href="#tag"/></svg></div>
+        <h3>Elke prijs vooraf</h3>
+        <p>Kies waar je heen gaat en de prijs van elke chauffeur voor de hele rit verschijnt, met hun rit naar jou erin. De goedkoopste eerst.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic-tile"><svg class="i"><use href="#cal"/></svg></div>
+        <h3>Plan tot een week vooruit</h3>
+        <p>Boek een rit voor later bij de chauffeurs die geplande ritten rijden, en betaal uiterlijk 30 minuten van tevoren.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="how">
+    <p class="kicker">Zo werkt het</p>
+    <h2 class="title">Van een tik tot de bestemming.</h2>
+    <div class="road" id="road" aria-hidden="true"><div class="tar"><div class="fill"></div><div class="dash"></div></div><div class="car"><svg class="i"><use href="#car"/></svg></div></div>
+    <div class="steps">
+      <button class="step on"><small>1</small><b>Een chauffeur neemt aan</b>Bestellen is gratis. Een chauffeur heeft 5 minuten om ja te zeggen, en je kunt nog annuleren.</button>
+      <button class="step"><small>2</small><b>Je betaalt</b>5 minuten om te betalen vanuit je eigen wallet, in USDC of SOL, terwijl je chauffeur al kan vertrekken. Of betaal contant in de auto.</button>
+      <button class="step"><small>3</small><b>Het ophalen</b>Volg je chauffeur op de kaart, controleer het kenteken, stap in en check in.</button>
+      <button class="step"><small>4</small><b>De rit</b>Beide telefoons volgen de route. Op de bestemming checkt je chauffeur uit, en kun je een review achterlaten.</button>
+    </div>
+  </section>
+
+  <section class="night" id="escrow">
+    <div class="lockring" aria-hidden="true">
+      <svg viewBox="0 0 120 120"><circle class="bg-ring" cx="60" cy="60" r="54"/><circle class="fg-ring" cx="60" cy="60" r="54" pathLength="100"/></svg>
+      <div class="lock"><svg class="i"><use href="#lock"/></svg></div>
+    </div>
+    <div>
+      <p class="kicker">Escrow</p>
+      <h2 class="title">Je geld wacht, op de blockchain.</h2>
+      <div class="promises">
+        <div><b>Vanuit jouw wallet, niet de onze.</b><span>Drivezzz heeft geen stortingen, tegoeden of opnames, en ziet nooit de sleutels van je wallet.</span></div>
+        <div><b>Eén rit, één escrow.</b><span>Elke betaling wacht in een eigen escrow, een programma op Solana, tot de rit klaar is. Dan gaat het naar je chauffeur, of terug naar jou als je geld terugkrijgt.</span></div>
+        <div><b>Het komt vanzelf terug.</b><span>Als er binnen 30 dagen niets is besloten, kan de hele betaling teruggestuurd worden naar de wallet die betaalde. Iedereen kan dat starten, ook als Drivezzz niet meer bestaat.</span></div>
+        <div><b>€0,10 gaat naar Drivezzz.</b><span>Dat is de vergoeding van het platform voor een rit die in crypto betaald is. Die gaat van de uitbetaling aan de chauffeur af, in de munt van de rit, als een rit volledig wordt uitbetaald. Contante ritten, terugbetalingen en een 50/50 hebben geen vergoeding.</span></div>
+        <div><b>Bekijk de code zelf.</b><span>De apps, de server en het escrow-programma staan openbaar op <a href="https://github.com/1arrcy1/Drivezzz">GitHub</a>. Zie wat ze doen, of bouw er je eigen app op.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="plans">
+    <p class="kicker">Als plannen veranderen</p>
+    <h2 class="title">Je weet wat je terugkrijgt.</h2>
+    <div class="card plans reveal">
+      <table>
+        <tr><th scope="row">Je annuleert voordat je betaald hebt</th><td>Gratis. Er is geen geld verplaatst.</td></tr>
+        <tr><th scope="row">Je chauffeur is te laat</th><td class="full">Alles terug, tot je ingecheckt bent</td></tr>
+        <tr><th scope="row">Je chauffeur annuleert</th><td class="full">Alles terug, ook als je al in de auto zit, tenzij je chauffeur 10 minuten op je heeft gewacht bij het ophaalpunt</td></tr>
+        <tr><th scope="row">Je annuleert na het betalen, terwijl je chauffeur op tijd is</th><td>50% terug, 50% naar je chauffeur</td></tr>
+      </table>
+    </div>
+    <p class="fine">Geplande ritten en de rest staan in de <a href="/terms#cancelling">voorwaarden</a>. Crypto kan in waarde dalen, en een betaling op een blockchain kan niet worden teruggedraaid.</p>
+  </section>
+
+  <section class="block" id="drive">
+    <p class="kicker">Rijden</p>
+    <h2 class="title">Jouw auto, jouw uren, jouw prijs.</h2>
+    <div class="split">
+      <div>
+        <ul class="ticks">
+          <li><svg class="i"><use href="#check"/></svg><span>Bepaal je eigen prijs per km, per minuut en voor de rit naar je passagier, voor elk voertuig.</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Rijd in een auto, op een motor of op een scooter.</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Zie de route, de afstand en de prijs voordat je aanneemt.</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Plan ritten vooruit als je wilt, en ga alleen online als het jou uitkomt.</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Krijg 24 uur na een rit uitbetaald op je eigen wallet.</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Betaal Drivezzz €0,10 per rit die in crypto betaald is, van je uitbetaling af, en niets bij contante ritten.</span></li>
+        </ul>
+        <div class="drive-note">
+          <b>Je rijdt voor jezelf</b>
+          <p>Drivezzz is in de kern een marktplaats en neemt geen verantwoordelijkheid voor je verzekering of vergunningen. We controleren wel wat we kunnen bij de bronnen die er zijn: laat je verifiëren voor een blauw vinkje, dat een auto in Nederland nodig heeft voordat hij online kan. Zorgen dat je hebt wat de wet vraagt, blijft jouw verantwoordelijkheid.</p>
+        </div>
+      </div>
+      <div class="card reveal" aria-label="Voorbeeld van wat een chauffeur verdient">
+        <div class="earn"><small>Totaal verdiend</small><b>€1.284,50</b><small>6 ritten vandaag</small></div>
+        <div class="scores"><div><b>98%</b>Op tijd</div><div><b>100%</b>Voltooid</div><div><b>94%</b>Aangenomen</div></div>
+        <div class="slide"><i><svg class="i"><use href="#car"/></svg></i><span>Ga online</span></div>
+        <p class="note" style="margin-top:12px">Een voorbeeld: deze cijfers zijn verzonnen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="safety">
+    <p class="kicker">Veiligheid</p>
+    <h2 class="title">Gemaakt voor twee onbekenden in één auto.</h2>
+    <div class="grid3">
+      <div class="card reveal"><div class="ic-tile"><svg class="i"><use href="#plate"/></svg></div><h3>Controleer het kenteken</h3><p>Zie de auto, de foto's en het kenteken. Je checkt pas in als je binnen zit.</p></div>
+      <div class="card reveal"><div class="ic-tile"><svg class="i"><use href="#route"/></svg></div><h3>Beide telefoons volgen de route</h3><p>Als je telefoon en de auto uit elkaar raken, vraagt de app of alles in orde is.</p></div>
+      <div class="card reveal"><div class="ic-tile"><svg class="i"><use href="#chat"/></svg></div><h3>Privéberichten</h3><p>Berichten zijn end-to-end versleuteld. We kunnen een chat alleen lezen als je hem meldt.</p></div>
+      <div class="card reveal"><div class="ic-tile"><svg class="i"><use href="#block"/></svg></div><h3>Meld of blokkeer iedereen</h3><p>Vanaf hun pagina, een rit of een chat. We bekijken meldingen binnen 24 uur. Meld altijd een bestemming die een auto niet kan bereiken: daarvoor kan iemand meteen voorgoed geweerd worden.</p></div>
+      <div class="card reveal"><div class="ic-tile"><svg class="i"><use href="#shield"/></svg></div><h3>Drie strikes en je ligt eruit</h3><p>Een strike is een week geweerd, drie is voorgoed. Een nieuw account of de app opnieuw installeren helpt daar niet tegen.</p></div>
+      <div class="card reveal"><div class="ic-tile"><svg class="i"><use href="#clock"/></svg></div><h3>Scores voor op tijd en voltooid</h3><p>De pagina van elke chauffeur laat zien hoe vaak ze op tijd zijn en een rit afmaken, met echte reviews van hun passagiers.</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="get">
+    <p class="kicker">Download de app</p>
+    <h2 class="title">Nu in de App Store.</h2>
+    <p class="sub">Drivezzz is er voor iPhone. Android volgt binnenkort: je kunt je al aanmelden als tester.</p>
+    <div class="stores">
+      <div class="card store reveal">
+        <div class="store-head">
+          <img class="store-icon" src="/logo.png" width="72" height="72" alt="">
+          <div><h3>Drivezzz</h3><p>Reizen · Gratis · 18+</p></div>
+          <a class="badge" href="https://apps.apple.com/nl/app/drivezzz/id6829689681" rel="noopener"><svg class="i"><use href="#apple"/></svg><span><small>Download in de</small>App Store</span></a>
+        </div>
+        <dl class="specs">
+          <div><dt>Werkt op</dt><dd>iPhone met iOS 17 of nieuwer</dd></div>
+          <div><dt>Prijs</dt><dd>Gratis, geen aankopen in de app</dd></div>
+          <div><dt>Leeftijd</dt><dd>18+</dd></div>
+          <div><dt>Grootte</dt><dd>31,3 MB</dd></div>
+          <div><dt>Taal</dt><dd>Engels, Nederlands volgt binnenkort</dd></div>
+          <div><dt>Privacylabel</dt><dd>Geen gegevens verzameld</dd></div>
+          <div><dt>Waar</dt><dd>Begint in Nederland</dd></div>
+          <div><dt>Betalen</dt><dd>USDC of SOL vanuit je eigen wallet, of contant</dd></div>
+        </dl>
+        <ul class="ticks store-ticks">
+          <li><svg class="i"><use href="#check"/></svg><span>Zie de prijs van elke chauffeur vooraf, of noem je eigen prijs</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Plan een rit tot een week vooruit</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Escrow op Solana, end-to-end versleutelde chat</span></li>
+          <li><svg class="i"><use href="#check"/></svg><span>Rijd in een auto, op een motor of scooter, voor je eigen prijs</span></li>
+        </ul>
+        <p class="note">Open <a href="https://apps.apple.com/nl/app/drivezzz/id6829689681" rel="noopener">de pagina in de App Store</a> voor screenshots en de volledige beschrijving.</p>
+      </div>
+      <div class="card store android reveal" id="android">
+        <div class="store-head">
+          <div class="ic-tile"><svg class="i"><use href="#play"/></svg></div>
+          <div><h3>Android: volgt binnenkort</h3><p>Google Play · wordt getest</p></div>
+        </div>
+        <p>De Android-app zit in de laatste testronde voordat hij op Google Play komt. Wil je hem eerder dan iedereen? Meld je in drie stappen aan als tester, in deze volgorde:</p>
+        <ol class="signup">
+          <li><b>Word lid van de testgroep</b><a href="https://groups.google.com/g/drivezzz-testers" rel="noopener">groups.google.com/g/drivezzz-testers</a><span>Google Play laat alleen leden van deze groep toe.</span></li>
+          <li><b>Word tester</b><a href="https://play.google.com/apps/testing/eu.drivezzz.app" rel="noopener">play.google.com/apps/testing/eu.drivezzz.app</a><span>Met hetzelfde Google-account als op je telefoon.</span></li>
+          <li><b>Installeer de app</b><a href="https://play.google.com/store/apps/details?id=eu.drivezzz.app" rel="noopener">play.google.com/store/apps/details?id=eu.drivezzz.app</a><span>Deze pagina opent pas als je binnen bent als tester. Dat kan een paar minuten duren.</span></li>
+        </ol>
+        <p class="note">Testen is voor mensen van 18 jaar en ouder. Er kan nog iets veranderen voor de release. Iets gevonden? <a href="/support#contact">Laat het ons weten</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="endcap">
+    <h2>Drivezzz staat in de App Store.</h2>
+    <p>Voor iPhone, voor mensen van 18 jaar en ouder. Android volgt binnenkort, en je kunt al <a href="#android">meedoen met de bèta</a>. Vragen? We helpen je graag.</p>
+    <div class="cta">
+      <a class="badge" href="https://apps.apple.com/nl/app/drivezzz/id6829689681" rel="noopener"><svg class="i"><use href="#apple"/></svg><span><small>Download in de</small>App Store</span></a>
+      <a class="btn" href="/support">Naar de hulppagina</a>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div class="cols">
+    <div><a class="brand" href="/"><svg class="mark" viewBox="0 0 1000 1000" aria-hidden="true"><rect width="1000" height="1000"/><path class="r" d="M270 290H730L270 710H730" fill="none" stroke-width="150" stroke-linejoin="round" stroke-linecap="round"/></svg>Drivezzz</a><p class="tag">Een open markt voor ritten. Geen advertenties, en geen trackers in de app of op deze website.</p></div>
+    <div><h3>Drivezzz</h3><ul><li><a href="#market">De markt</a></li><li><a href="#how">Zo werkt het</a></li><li><a href="#escrow">Escrow</a></li><li><a href="#drive">Rijden</a></li><li><a href="#safety">Veiligheid</a></li><li><a href="#get">Download de app</a></li><li><a href="https://github.com/1arrcy1/Drivezzz">Broncode</a></li></ul></div>
+    <div><h3>Hulp</h3><ul><li><a href="/support">Hulp</a></li><li><a href="/support#report">Een probleem melden</a></li><li><a href="/support#delete">Je account verwijderen</a></li></ul></div>
+    <div><h3>Juridisch</h3><ul><li><a href="/terms">Voorwaarden</a></li><li><a href="/eula">Licentieovereenkomst</a></li><li><a href="/privacy">Privacy</a></li><li><a href="/terms#who">Wie we zijn</a></li></ul></div>
+  </div>
+  <p class="small">© 2026 Drivezzz. Apple en App Store zijn handelsmerken van Apple Inc. Android en Google Play zijn handelsmerken van Google LLC.</p>
+</div></footer>
+</body>
+</html>

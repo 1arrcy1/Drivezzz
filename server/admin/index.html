@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Drivezzz admin</title>
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/admin/style.css?v=1">
+</head>
+<body>
+<div id="login" class="login" hidden>
+  <form id="loginForm">
+    <img src="/logo.svg" alt="" width="52" height="52">
+    <h1>Drivezzz admin</h1>
+    <input id="email" type="email" placeholder="Email" autocomplete="username" autocapitalize="off" spellcheck="false" required>
+    <input id="password" type="password" placeholder="Password" autocomplete="current-password" required>
+    <button class="primary">Log in</button>
+    <p id="loginError" class="error"></p>
+  </form>
+</div>
+<div id="change" class="login" hidden>
+  <form id="changeForm">
+    <img src="/logo.svg" alt="" width="52" height="52">
+    <h1 id="changeTitle">Change your password</h1>
+    <p id="changeNote" class="note"></p>
+    <input id="currentPassword" type="password" placeholder="Current password" autocomplete="current-password" required>
+    <input id="newPassword" type="password" placeholder="New password, at least 10 characters" autocomplete="new-password" minlength="10" required>
+    <input id="newPasswordAgain" type="password" placeholder="New password again" autocomplete="new-password" minlength="10" required>
+    <button class="primary">Save password</button>
+    <button type="button" id="changeBack" class="ghost"></button>
+    <p id="changeError" class="error"></p>
+  </form>
+</div>
+<div id="app" hidden>
+  <header>
+    <div class="brand"><img src="/logo.svg" alt="" width="28" height="28"> Drivezzz</div>
+    <nav id="tabs"></nav>
+    <button id="changePassword" class="ghost">Change password</button>
+    <button id="logout" class="ghost">Log out</button>
+  </header>
+  <div id="testNote" class="banner" hidden style="margin:14px 16px 0">Test server: everyone and everything on this panel is a test. The live Drivezzz has its own panel, which doesn’t know about any of this.</div>
+  <div id="stats" class="stats"></div>
+  <main id="view"></main>
+</div>
+<dialog id="dialog"><div id="dialogBody"></div></dialog>
+<script src="/admin/app.js?v=1"></script>
+</body>
+</html>

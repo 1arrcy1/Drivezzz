@@ -1,0 +1,29 @@
+[Unit]
+Description=Drivezzz test server: a pretend driver who takes every order
+After=drivezzz-test.service
+Wants=drivezzz-test.service
+
+[Service]
+Type=simple
+User=drivezzz-test
+Group=drivezzz-test
+WorkingDirectory=/opt/drivezzz-test/contract
+# Its wallet is a key file it makes itself in ~/devnet: never funded, nothing on any chain.
+Environment=HOME=/var/lib/drivezzz-test/driver
+Environment=TEST_DRIVER_LAT=52.0850
+Environment=TEST_DRIVER_LNG=4.3300
+# Where it waits: put these two in this file to change that. Riders see drivers within 10 km by default.
+EnvironmentFile=-/etc/default/drivezzz-test-driver
+ExecStart=/opt/drivezzz/node/bin/node --disable-warning=ExperimentalWarning test/test-driver.mjs http://127.0.0.1:8090 ${TEST_DRIVER_LAT} ${TEST_DRIVER_LNG}
+Restart=always
+RestartSec=5
+
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/drivezzz-test/driver
+InaccessiblePaths=-/var/lib/drivezzz
+
+[Install]
+WantedBy=multi-user.target
